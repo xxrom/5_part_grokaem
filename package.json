@@ -2,11 +2,11 @@
   "name": "5_part_grokaem",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
-,
-  "nodemonConfig": { "delay": "1" },
-  "scripts": 
-  {
-    "dev": "nodemon --exec python3 main.py ./main.py" 
+  "license": "MIT",
+  "nodemonConfig": {
+    "delay": "1"
+  },
+  "scripts": {
+    "dev": "nodemon --exec python3 0_simple_multi-input_gradient_decant.py ./0_simple_multi-input_gradient_decant.py"
   }
 }
