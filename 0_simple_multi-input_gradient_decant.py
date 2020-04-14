@@ -38,23 +38,33 @@ def neural_network(input, weights):
 
 
 # Input data
+alpha = 0.1  # good choice = 0.01
+# with alpha 0.1 - it will be discrapency(расхождение) in weight[0]
+# it increases each iteration
+
 true = win_or_lose_binary[0]
 input = [toes[0], wlrec[0], nfans[0]]
+print('INIT weights: ' + str(weights))
+print('-------------')
 
-# Prediction and error calculation
-pred = neural_network(input, weights)
-error = (pred - true)**2
-delta = pred - true
+for index in range(3):
+  # Prediction and error calculation
+  pred = neural_network(input, weights)
+  error = (pred - true)**2
+  delta = pred - true
+  print('Iteration: %d' % index)
+  print('Pred: %.04f' % pred)
+  print('CubeError: %.04f' % error)
+  print('Delta: %.04f' % delta)
 
-# Calc change delta (change weights)
-weight_deltas = vector_multiplier(delta, input)
-print(weight_deltas)
+  # Calc change delta (change weights)
+  weight_deltas = vector_multiplier(delta, input)
 
-alpha = 0.01
+  # Learning (main change in weights)
+  for i in range(len(weights)):
+    weights[i] -= alpha * weight_deltas[i]
 
-# Learning (main change in weights)
-for i in range(len(weights)):
-  weights[i] -= alpha * weight_deltas[i]
+  print('weights: ' + str(weights))
+  print('weights deltas: ' + str(weight_deltas))
 
-print('weights: ' + str(weights))
-print('weights deltas: ' + str(weight_deltas))
+  print('-------------')
