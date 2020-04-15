@@ -38,7 +38,7 @@ def neural_network(input, weights):
 
 
 # Input data
-alpha = 0.1  # good choice = 0.01
+alpha = 0.3  # good choice = 0.01
 # with alpha 0.1 - it will be discrapency(расхождение) in weight[0]
 # it increases each iteration
 
@@ -59,6 +59,10 @@ for index in range(3):
 
   # Calc change delta (change weights)
   weight_deltas = vector_multiplier(delta, input)
+  # frize changing for first weight
+  weight_deltas[0] = 0
+  # IT is important, than NN can learn and get error = 0
+  # without! changin weight[0] ! overLearning!
 
   # Learning (main change in weights)
   for i in range(len(weights)):

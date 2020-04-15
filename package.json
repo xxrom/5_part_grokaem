@@ -7,6 +7,7 @@
     "delay": "1"
   },
   "scripts": {
-    "dev": "nodemon --exec python3 0_simple_multi-input_gradient_decant.py ./0_simple_multi-input_gradient_decant.py"
+    "dev": "nodemon --exec python3 0_simple_multi-input_gradient_decant.py ./0_simple_multi-input_gradient_decant.py",
+    "dev1": "nodemon --exec python3 1_simple_multi-output_gradient_decant.py ./1_simple_multi-output_gradient_decant.py"
   }
 }
