@@ -53,6 +53,7 @@ alpha = 0.1
 # weight_deltas is equal to pred ??? ??? ??? I think so...
 # TODO: is it corrent scalar_vector_multiplier ??? or should be vector_multiplier ???
 weight_deltas = scalar_vector_multiplier(delta, weights)
+# weight_deltas = vector_multiplier(input, weights)
 
 # TODO: is it correct to calculate weights_delta again like that ?
 for i in range(len(true)):
