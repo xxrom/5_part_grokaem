@@ -98,10 +98,15 @@ def learnIteration(inputIterationNumber: int, isShowPrints=False):
     # print('weight_deltas', weight_deltas)
 
     for j in range(len(weights[i])):
+      # Apply changes  for each output weight
+      # maybe it should be applied in other way ? =D
       weights[i][j] -= weight_deltas[j][i] * alpha
 
 
 for ii in range(300):
+  # I'm not sure that it's correct way to teach NN
+  # Maybe it is better calculate AVG error for each input
+  # and apply it ...
   # Change weights after each input
   for inputIteration in range(len(toes)):
     learnIteration(inputIteration)
